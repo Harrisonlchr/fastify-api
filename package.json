@@ -1,0 +1,24 @@
+{
+  "dependencies": {
+    "axios": "^0.26.1",
+    "fastify": "^3.27.4",
+    "fastify-swagger": "^5.0.0"
+  },
+  "name": "fastify-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {
+    "jest": "^27.5.1",
+    "nodemon": "^2.0.15",
+    "supertest": "^6.2.2"
+  },
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "test": "jest --verbose"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
