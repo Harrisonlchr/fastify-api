@@ -4,10 +4,7 @@ const fastify = require('fastify')({
 });
 
 // ROUTES
-const weatherRoute = require('./routes/weather.routes');
-weatherRoute.forEach((route) => {
-  fastify.route(route);
-});
+fastify.register(require('./routes'));
 // ROUTES
 
 // SWAGGER
