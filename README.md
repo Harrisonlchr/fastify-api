@@ -14,18 +14,17 @@ $ npm install
 
 ## Running the app
 
-- First we need to create .env file for the project
+  1. First we need to create .env file for the project
 
-     JWT_SECRET=(keyword to use as secret for the JWT)
-     JWT_EXPIRATION_TIME=(default expiration time in seconds)
+      WEATHER_API_URL
+      WEATHER_API_KEY
 
-  3. Run the project, there are some options:
+  2. Run the project, there are some options:
 
-   ```bash
-      # development
-      $ npm run dev
+  ```bash
+     # development
+     $ npm run dev
 
-      # run test
-      $ npm run test
-   ```
-
+     # run test
+     $ npm run test
+  ```
