@@ -10,7 +10,8 @@ describe("weater controller", () => {
     body: {},
     params: {},
     query: {
-      city: "Buenos Aires",
+      lat: "30.489772",
+      lon: "-99.771335",
     },
   };
   const reply = {

@@ -4,9 +4,16 @@ const getValidationWeathetSchema = {
   querystring: {
     type: "object",
     properties: {
-      city: { type: "string" },
+      lat: { type: "string" },
+      lon: { type: "string" },
+      units: {
+        type: "string",
+        enum: ["standard", "metric", "imperial"],
+        default: "metric",
+      },
+      compare: { type: "number", default: 15 },
     },
-    required: ["city"],
+    required: ["lat", "lon"],
   },
   response: {
     200: {
