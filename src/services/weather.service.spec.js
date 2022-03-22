@@ -1,15 +1,15 @@
-const { getValidationWeatherService } = require("./weather.services");
-const axios = require("axios");
+/* eslint-disable no-use-before-define */
+/* eslint-disable no-undef */
+const axios = require('axios');
+const { getValidationWeatherService } = require('./weather.services');
 
-jest.mock("axios");
-jest.mock("./weather.services", () => {
-  return { getValidationWeatherService: jest.fn(() => data) };
-});
+jest.mock('axios');
+jest.mock('./weather.services', () => ({ getValidationWeatherService: jest.fn(() => data) }));
 
 const data = {
   lat: 40.12,
   lon: -96.66,
-  timezone: "America/Chicago",
+  timezone: 'America/Chicago',
   timezone_offset: -18000,
   current: {
     dt: 1595243443,
@@ -28,31 +28,30 @@ const data = {
     weather: [
       {
         id: 501,
-        main: "Rain",
-        description: "moderate rain",
-        icon: "10n",
+        main: 'Rain',
+        description: 'moderate rain',
+        icon: '10n',
       },
       {
         id: 201,
-        main: "Thunderstorm",
-        description: "thunderstorm with rain",
-        icon: "11n",
+        main: 'Thunderstorm',
+        description: 'thunderstorm with rain',
+        icon: '11n',
       },
     ],
     rain: {
-      "1h": 2.93,
+      '1h': 2.93,
     },
   },
 };
 const request = {
   lat: 40.12,
   lon: -96.66,
-}
-describe("weather service", () => {
-    it("when API call is successful should return users list", async () => {
-
-      axios.get.mockResolvedValueOnce();
-      const result = await getValidationWeatherService(request);
-      expect(result).toEqual(data);
-    });
+};
+describe('weather service', () => {
+  it('when API call is successful should return users list', async () => {
+    axios.get.mockResolvedValueOnce();
+    const result = await getValidationWeatherService(request);
+    expect(result).toEqual(data);
   });
+});

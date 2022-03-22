@@ -1,32 +1,33 @@
-const fastify = require("fastify")({
+/* eslint-disable import/newline-after-import */
+const fastify = require('fastify')({
   logger: true,
 });
 
 // ROUTES
-const weatherRoute = require("./routes/weather.routes");
+const weatherRoute = require('./routes/weather.routes');
 weatherRoute.forEach((route) => {
   fastify.route(route);
 });
 // ROUTES
 
 // SWAGGER
-const swagger = require("./utils/swagger");
-fastify.register(require("fastify-swagger"), swagger.options);
+const swagger = require('./utils/swagger');
+fastify.register(require('fastify-swagger'), swagger.options);
 // SWAGGER
 
 // ENV
-fastify.register(require("fastify-env"), {
+fastify.register(require('fastify-env'), {
   dotenv: true,
   schema: {
-    type: "object",
+    type: 'object',
     properties: {
       WEATHER_API_URL: {
-        type: "string",
-        default: "",
+        type: 'string',
+        default: '',
       },
       WEATHER_API_KEY: {
-        type: "string",
-        default: "",
+        type: 'string',
+        default: '',
       },
     },
   },

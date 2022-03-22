@@ -1,4 +1,4 @@
-const services = require("../services/weather.services");
+const services = require('../services/weather.services');
 
 const getValidationWeatherController = async (request, reply) => {
   const { query } = request;

@@ -1,9 +1,12 @@
-const axios = require("axios");
+/* eslint-disable consistent-return */
+const axios = require('axios');
 
-const getValidationWeatherService = async ({ lat, lon, units, compare }) => {
+const getValidationWeatherService = async ({
+  lat, lon, units, compare,
+}) => {
   try {
     const response = await axios({
-      method: "get",
+      method: 'get',
       url: process.env.WEATHER_API_URL,
       params: {
         lat,
@@ -17,6 +20,7 @@ const getValidationWeatherService = async ({ lat, lon, units, compare }) => {
     if (response.data.current.temp > compare) ishigher = true;
     return { ishigher };
   } catch (error) {
+    // eslint-disable-next-line no-console
     console.log(error);
   }
 };

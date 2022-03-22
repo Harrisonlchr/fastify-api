@@ -1,28 +1,28 @@
 const getValidationWeathetSchema = {
-  title: "Getting Weather",
-  description: "Method example descriptions",
+  title: 'Getting Weather',
+  description: 'Method example descriptions',
   querystring: {
-    type: "object",
+    type: 'object',
     properties: {
-      lat: { type: "string" },
-      lon: { type: "string" },
+      lat: { type: 'string' },
+      lon: { type: 'string' },
       units: {
-        type: "string",
-        enum: ["standard", "metric", "imperial"],
-        default: "metric",
+        type: 'string',
+        enum: ['standard', 'metric', 'imperial'],
+        default: 'metric',
       },
-      compare: { type: "number", default: 15 },
+      compare: { type: 'number', default: 15 },
     },
-    required: ["lat", "lon"],
+    required: ['lat', 'lon'],
   },
   response: {
     200: {
-      type: "object",
-      description: "Method response example",
+      type: 'object',
+      description: 'Method response example',
       properties: {
-        ishigher: { type: "boolean" },
+        ishigher: { type: 'boolean' },
       },
-      required: ["ishigher"],
+      required: ['ishigher'],
     },
   },
 };
